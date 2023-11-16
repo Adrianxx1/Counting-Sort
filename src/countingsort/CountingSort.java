@@ -17,6 +17,20 @@ public class CountingSort {
          int max = getMaxValue(array);
          int[] count = new int[max + 1];
          int[] sortedArray = new int[array.length];
+
+         // Contar la frecuencia de cada elemento
+        for (int i : array) {
+            count[i]++;
     }
-    
+
+
+      // Actualizar el array de conteo para contener las posiciones reales de los elementos en el array ordenado
+      for (int i = 1; i < count.length; i++) {
+        count[i] += count[i - 1];
+}
+}
+
+    private static int getMaxValue(int[] array) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
