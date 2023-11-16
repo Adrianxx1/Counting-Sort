@@ -27,7 +27,6 @@ package countingsort;
             count[i] += count[i - 1];
         }
 
-    
         // Construir el array ordenado
         for (int i = array.length - 1; i >= 0; i--) {
             sortedArray[count[array[i]] - 1] = array[i];
@@ -39,6 +38,30 @@ package countingsort;
     }
 
     private static int getMaxValue(int[] array) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int max = array[0];
+        for (int value : array) {
+            if (value > max) {
+                max = value;
+            }
+        }
+        return max;
     }
+
+    public static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
     }
+
+    public static void main(String[] args) {
+        int[] array = {4, 2, 2, 8, 3, 3, 1};
+        System.out.println("Array original:");
+        printArray(array);
+
+        countingSort(array);
+
+        System.out.println("Array ordenado:");
+        printArray(array);
+    }
+}
