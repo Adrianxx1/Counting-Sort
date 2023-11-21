@@ -1,16 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package countingsort;
+import java.util.Scanner;
 
-/**
- *
- * @author Adrian
- */
-
-
- public class CountingSort {
+public class CountingSort {
 
     public static void countingSort(int[] array) {
         int max = getMaxValue(array);
@@ -55,7 +45,20 @@ package countingsort;
     }
 
     public static void main(String[] args) {
-        int[] array = {4, 2, 2, 8, 3, 3, 1};
+        Scanner scanner = new Scanner(System.in);
+
+        // Ingresar el numero de elementos que el arreglo va a contener
+        System.out.print("Ingresa el tamaño del arreglo: ");
+        int size = scanner.nextInt();
+
+        // Ingresa el valor de los arreglos 
+        int[] array = new int[size];
+        System.out.println("Ingresa los valores del arreglo:");
+        for (int i = 0; i < size; i++) {
+            System.out.print("Element " + (i + 1) + ": ");
+            array[i] = scanner.nextInt();
+        }
+
         System.out.println("Array original:");
         printArray(array);
 
@@ -63,5 +66,8 @@ package countingsort;
 
         System.out.println("Array ordenado:");
         printArray(array);
+
+        // Close the scanner to avoid resource leak
+        scanner.close();
     }
 }
