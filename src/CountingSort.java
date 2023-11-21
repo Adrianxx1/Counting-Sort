@@ -3,8 +3,11 @@ import java.util.Scanner;
 public class CountingSort {
 
     public static void countingSort(int[] array) {
+        // llamado para encontar el valor maximo dentro del arreglo
         int max = getMaxValue(array);
+        // count para almacenar la frecuencia de cada elemento
         int[] count = new int[max + 1];
+        // para almacenar los elementos ordenados
         int[] sortedArray = new int[array.length];
 
         // Contar la frecuencia de cada elemento
